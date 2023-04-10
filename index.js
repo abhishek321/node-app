@@ -18,7 +18,7 @@ const logger = require('morgan');
 const productRouter = require('./routes/products');
 server.use(cors());
 server.use(express.json());
-server.use(logger('default'));
+server.use(logger('combined'));
 server.use(express.static(path.resolve(__dirname,'public','index.html')));
 server.use('/products',productRouter.router);  
 server.listen(process.env.PORT,(req,res)=>{console.log(process.env.PORT);
